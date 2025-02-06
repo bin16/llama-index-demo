@@ -1,7 +1,7 @@
 # https://docs.llamaindex.ai/en/stable/getting_started/starter_example_local/
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 
-from settings.model import init_models
+from settings.models import init_models
 
 init_models()
 

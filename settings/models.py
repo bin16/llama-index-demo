@@ -5,4 +5,4 @@ from llama_index.llms.ollama import Ollama
 
 def init_models():
   Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text:latest")
-  Settings.llm = Ollama(model="llama3.2:latest", request_timeout=360.0)
+  Settings.llm = Ollama(model="deepseek-r1:latest", request_timeout=360.0)

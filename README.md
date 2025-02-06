@@ -19,7 +19,7 @@ ollama pull nomic-embed-text:latest
 
 ### Files
 
-- main.py - read context from files, and query
+- main.py - read context from files, and query **PDF also supported**
 - db-save.py - read context from files, and write to chrome db
 - db-load.py - read context from chroma db, and query
 - settings

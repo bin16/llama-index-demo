@@ -1,6 +1,6 @@
 from llama_index.core import StorageContext, VectorStoreIndex
 
-from settings.model import init_models
+from settings.models import init_models
 from settings.chroma import init_chroma
 
 init_models()

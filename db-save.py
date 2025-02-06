@@ -4,7 +4,7 @@ from llama_index.core import SimpleDirectoryReader, StorageContext, VectorStoreI
 from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.vector_stores.chroma import ChromaVectorStore
 
-from settings.model import init_models
+from settings.models import init_models
 from settings.chroma import init_chroma
 
 init_models()
