@@ -4,21 +4,20 @@ from llama_index.core import SimpleDirectoryReader, StorageContext, VectorStoreI
 from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.vector_stores.chroma import ChromaVectorStore
 
-# 0. embedding model
-embed_model = OllamaEmbedding(model_name="nomic-embed-text:latest")
+from settings.model import init_models
+from settings.chroma import init_chroma
 
-# 1. Read content from data/
+init_models()
+
+# 1. Read context from files in data/ directory
 documents = SimpleDirectoryReader("./data/").load_data()
 
-# 2. Vector Store - Open Database
-db = chromadb.PersistentClient(path="test.db")
-chroma_collection = db.get_or_create_collection("quickstart")
-vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+vector_store = init_chroma()
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
-# 3. Save to Disk
+# 2. Index
+# 3. Save to ChromaDB
 index = VectorStoreIndex.from_documents(
   documents,
   storage_context=storage_context,
-  embed_model=embed_model,
 )

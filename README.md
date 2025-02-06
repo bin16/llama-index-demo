@@ -1,16 +1,30 @@
-## Installation
+### Installation
+
+It is recommended to setup virtualenv before install packages.
 
 https://docs.llamaindex.ai/en/stable/getting_started/installation/
 
+
 ```sh
+# install necessary packages
 pip install -r requirements.txt
 ```
 
-## python main.py
+### Download Models
 
-read files under data/ as context and answer question.
+```sh
+ollama pull llama3.2:latest
+ollama pull nomic-embed-text:latest
+```
 
-----
+### Files
+
+- main.py - read context from files, and query
+- db-save.py - read context from files, and write to chrome db
+- db-load.py - read context from chroma db, and query
+- settings
+  - chroma.py - init chroma db and return vector_store
+  - model.py - init LLM and embeddings models
 
 ### LLM
 
